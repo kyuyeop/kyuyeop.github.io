@@ -67,10 +67,10 @@
 	<p>
 	try{<br>
 	if (msg.indexOf("/시세")==0){<br>
-	var won = Utils.getWebText("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+info.substr(4)+"+환율").split("t_nm")[1].split("<strong>")[1];<br>
+	var won = Utils.getWebText("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+mag.substr(4)+"+환율").split("t_nm")[1].split("<strong>")[1];<br>
 	var perc = won.split("(")[1].split(")")[0];<br>
 	var ud = won.split("ico")[1].split(">")[1].split("<")[0];<br>
-	replier.reply("["+info.substr(4)+" 환율]\n"+info.substr(4)+" 당 : "+won.split("</strong>")[0]+"원\n전일대비"+perc+ud);<br>
+	replier.reply("["+msg.substr(4)+" 환율]\n"+msg.substr(4)+" 당 : "+won.split("</strong>")[0]+"원\n전일대비"+perc+ud);<br>
 	}<br>
 	} catch (e){<br>
 	replier.reply("검색결과가 없습니다.");<br>
@@ -85,22 +85,22 @@
 	var m = (day.getMonth() + 1);<br>
 	var d = (day.getDate() + 1);<br>
 	var pap = (m+"월 "+d+"일 [중식]");<br>
-	var u=Utils.getWebText("http://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query="+ info.substr(4) + "+급식");<br>
+	var u=Utils.getWebText("http://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query="+ msg.substr(4) + "+급식");<br>
 	var a=u.split(pap+"</strong>");<br>
 	var b=a[1].split("</ul>");<br>
 	b = b[0].replace(/(<([^>]+)>)/g, "");<br>
-	replier.reply("["+info.substr(4)+"]\n"+pap+"입니다.\n"+b+"※숫자는 식품 알레르기 식별 번호입니다.※\n1.난류 2.우유 3.메밀 4.땅콩 5.대두 6.밀 7.고등어 8.게 9.새우 10.돼지고기 11.복숭아 12.토마토 13.아황산류 14.호두 15.닭고기 16.쇠고기 17.오징어 18.조개류(굴,전복,홍합 포함)");<br> 
+	replier.reply("["+msg.substr(4)+"]\n"+pap+"입니다.\n"+b+"※숫자는 식품 알레르기 식별 번호입니다.※\n1.난류 2.우유 3.메밀 4.땅콩 5.대두 6.밀 7.고등어 8.게 9.새우 10.돼지고기 11.복숭아 12.토마토 13.아황산류 14.호두 15.닭고기 16.쇠고기 17.오징어 18.조개류(굴,전복,홍합 포함)");<br> 
 	}<br>
 	}<br>
 	catch(e)<br>
 	{<br>>
-	replier.reply(info.substr(4)+"학교 정보가 없거나 식단이 없습니다.");<br>
+	replier.reply(mag.substr(4)+"학교 정보가 없거나 식단이 없습니다.");<br>
 	}<br>
 	<br>
 	<h3>/날씨</h3>
 	<p>
 	if (msg.indexOf ("/날씨") == 0) {<br>
-    var where = info.substr (4);<br>
+    var where = msg.substr (4);<br>
     try {<br>
     var link = Utils.getWebText ("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=" + where + "+기상정보");<br>
     var weather = link.split ("<p class=\"cast_txt\">")[1].split (",")[0];<br>
@@ -117,14 +117,14 @@
 	<p>
 	try {
 	if(msg.indexOf("/대기정보")==0){<br>
-	var u=Utils.getWebText("https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query="+info.substr(6)+"+%EB%8C%80%EA%B8%B0%EC%A0%95%EB%B3%B4%20&o");<br>
+	var u=Utils.getWebText("https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query="+msg.substr(6)+"+%EB%8C%80%EA%B8%B0%EC%A0%95%EB%B3%B4%20&o");<br>
 	var a=u.split("<em class=\"main_figure\">");<br>
 	var b=u.split("<span class=\"state\">");<br>
 	var c=u.split("<span class=\"state_info\">");<br>
-	replier.reply(info.substr(6)+"의 대기정보 검색결과 입니다\n미세먼지:"+a[1].split("<")[0]+"㎍/㎥\n초미세먼지:"+b[3].split("<")[0]+c[1].split("<")[0]+"\n오존:"+b[4].split("<")[0]+c[2].split("<")[0]+"\n일산화탄소:"+b[5].split("<")[0]+c[3].split("<")[0]+"\n아황산가스:"+b[6].split("<")[0]+c[4].split("<")[0]+"\n이산화질소:"+b[7].split("<")[0]+c[5].split("<")[0]+"\n통합대기:"+b[8].split("<")[0]+c[6].split("<")[0]);<br>
+	replier.reply(msg.substr(6)+"의 대기정보 검색결과 입니다\n미세먼지:"+a[1].split("<")[0]+"㎍/㎥\n초미세먼지:"+b[3].split("<")[0]+c[1].split("<")[0]+"\n오존:"+b[4].split("<")[0]+c[2].split("<")[0]+"\n일산화탄소:"+b[5].split("<")[0]+c[3].split("<")[0]+"\n아황산가스:"+b[6].split("<")[0]+c[4].split("<")[0]+"\n이산화질소:"+b[7].split("<")[0]+c[5].split("<")[0]+"\n통합대기:"+b[8].split("<")[0]+c[6].split("<")[0]);<br>
 	}<br>
 	} catch(e) {<br>
-	replier.reply(info.substr(6)+"대기 정보가 없습니다");<br>
+	replier.reply(msg.substr(6)+"대기 정보가 없습니다");<br>
 	}<br>
 	</p>
 	<br>
