@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.button {
+			width: 250px;
+			height: 100px;
+			font-family: 'Roboto', sans-serif;
+			font-size: 20px;
+			text-transform: uppercase;
+			letter-spacing: 2.5px;
+			font-weight: 500;
+			color: #000;
+			background-color: #fff;
+			border: none;
+			border-radius: 45px;
+			box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+			transition: all 0.3s ease 0s;
+			cursor: pointer;
+			outline: none;
+			}
+			.submitbutton {
+			width: 100px;
+			height: 35px;
+			font-family: 'Roboto', sans-serif;
+			font-size: 12px;
+			text-transform: uppercase;
+			letter-spacing: 2.5px;
+			font-weight: 500;
+			color: #000;
+			background-color: #fff;
+			border: none;
+			border-radius: 45px;
+			box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+			transition: all 0.3s ease 0s;
+			cursor: pointer;
+			outline: none;
+			position: absolute;
+			transform:translate(-50%, 30%);
+			}
+			.button:hover {
+			background-color: #2EE59D;
+			box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+			color: #fff;
+			}
+			.submitbutton:hover {
+			background-color: #2EE59D;
+			box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+			color: #fff;
+			transform:translate(-50%, 30%);
+			}
+		</style>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<script type="text/javascript">
+			document.title = 'Download ' + file;
+			var addr = window.location.search.substring(1);
+			var file = addr.substring(5);
+			if (addr == ""){
+				alert("url is incorrect");
+				document.write ('<center><p style="color:white">URL is incorrect</p></center>');
+			}
+			function downloadherf() {
+				if (grecaptcha.getResponse() == "") {
+					alret("recaptha");
+				} else {
+				window.location.assign('http://kyuyeop.ipdisk.co.kr:8989/publist/HDD1/Share/' + file);
+			}
+			}
+		</script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    	<script type="text/javascript">
+	        (function(){
+	           emailjs.init('user_jDYbvqehf93oNC3j1C37A');
+	        })();
+    	</script>
+    	<script type="text/javascript">
+	        window.onload = function() {
+	            document.getElementById('contact-form').addEventListener('submit', function(event) {
+	                event.preventDefault();
+	                // generate the contact number value
+	                this.contact_number.value = Math.random() * 100000 | 0;
+	                emailjs.sendForm('gmail', 'template_lO0ZYZF4', this);
+	            });
+	        }
+    	</script>
+	</head>
+	<body bgcolor="2288ff">
+		<center>
+		<noscript>
+			<br>
+			<div style="width:75%; height:100px; border-radius:5px; background-color:red;">
+			<center>
+				<p style="color:white; font-size:25px;"><b>자바스크립트를 사용할 수 없습니다. 자바스크립트 기능을 켜주세요.</b></p>
+				<p style="color:white; font-size:25px;"><b>자바스크립트를 활성화 하지 않으면 파일 다운로드가 불가합니다.</b></p>
+			</center>
+		</noscript>
+			<br>
+			<br>
+			<br>
+			<div style="width:75%; max-width:720px; height:75vh; border-radius:15px; background-color:white; position:relative;">
+				<center>
+					<br>
+					<br>
+					<p style="color:black; font-size:20px;">다운로드 받아주셔서 감사합니다.</p>
+					<br>
+					<br>
+					<br>
+					<p>아래에 이메일을 적어 주세요.</p>
+					<p>적어주신 이메일로 압축파일의 비밀번호를 발송해 드립니다.</p>
+				    <form id="contact-form">
+				        <input type="hidden" name="contact_number">
+				        <input style="border-radius:5px; width:300px; height:25px;" type="email" placeholder="Email to send password" name="from_email">
+				        <br>
+				        <input class="submitbutton" type="submit" value="Send">
+				    </form>
+				    <br>
+				    <br>
+				    <br>
+				    <br>
+				    <div class="g-recaptcha" data-sitekey="6LcdN-MUAAAAALDMIwpzPjsDyCXV-uDj8STXZxlP"></div>
+				    <br>
+					<button class="button" onclick="downloadherf()">다운로드</a>
+				</center>
+			</div>
+		</center>
+	</body>
+</html>
