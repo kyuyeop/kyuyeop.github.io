@@ -52,21 +52,21 @@
 		</style>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-    	<script type="text/javascript">
-	        (function(){
-	           emailjs.init('user_jDYbvqehf93oNC3j1C37A');
-	        })();
-    	</script>
-    	<script type="text/javascript">
-	        window.onload = function() {
-	            document.getElementById('contact-form').addEventListener('submit', function(event) {
-	                event.preventDefault();
-	                // generate the contact number value
-	                this.contact_number.value = Math.random() * 100000 | 0;
-	                emailjs.sendForm('gmail', 'template_lO0ZYZF4', this);
-	            });
-	        }
-    	</script>
+		<script type="text/javascript">
+			(function(){
+			   emailjs.init('user_jDYbvqehf93oNC3j1C37A');
+			})();
+		</script>
+		<script type="text/javascript">
+			window.onload = function() {
+			    document.getElementById('contact-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				// generate the contact number value
+				this.contact_number.value = Math.random() * 100000 | 0;
+				emailjs.sendForm('gmail', 'template_lO0ZYZF4', this);
+			    });
+			}
+		</script>
 	</head>
 	<body bgcolor="2288ff">
 		<center>
