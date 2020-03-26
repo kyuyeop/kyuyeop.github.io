@@ -51,22 +51,6 @@
 			}
 		</style>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
-		<script type="text/javascript">
-			document.title = 'Download ' + file;
-			var addr = window.location.search.substring(1);
-			var file = addr.substring(5);
-			if (addr == ""){
-				alert("url is incorrect");
-				document.write ('<center><p style="color:white">URL is incorrect</p></center>');
-			}
-			function downloadherf() {
-				if (grecaptcha.getResponse() == "") {
-					alret("recaptha");
-				} else {
-				window.location.assign('http://kyuyeop.ipdisk.co.kr:8989/publist/HDD1/Share/' + file);
-			}
-			}
-		</script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
     	<script type="text/javascript">
 	        (function(){
@@ -117,9 +101,9 @@
 				    <br>
 				    <br>
 				    <br>
-				    <div class="g-recaptcha" data-sitekey="6LcdN-MUAAAAALDMIwpzPjsDyCXV-uDj8STXZxlP"></div>
+				    <div class="g-recaptcha" data-sitekey="6LcGJ-QUAAAAALo2Ec0Ze_XcfMSvcAvkPN4yEY_d"></div>
 				    <br>
-					<button class="button" onclick="downloadherf()">다운로드</a>
+					<button class="button" onclick="location.href='http://kyuyeop.ipdisk.co.kr:8989/publist/HDD1/Share/RKJJ.zip'">다운로드</a>
 				</center>
 			</div>
 		</center>
