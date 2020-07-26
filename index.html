@@ -1,27 +1,155 @@
-<!DOCTYPE html>
 <html>
 <head>
-<title>xplane.kro.kr</title>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<title>Korea Ortho4xp Download</title>
+	<script type="text/javascript">
+		var airport = new Array(
+			["RKJY","+34+127"],
+			["RKJJ","+35+126"],
+			["RKJB","+35+126"],
+			["RKJK","+35+126"],
+			["RKTN","+35+128"],
+			["RKPK","+35+128"],
+			["RKTH","+35+129"],
+			["RKPU","+35+129"],
+			["RKTA","+36+126"],
+			["RKSG","+36+127"],
+			["RKUL","+36+127"],
+			["RKTU","+36+127"],
+			["RKTL","+36+129"],
+			["RKSI","+37+126"],
+			["RKSW","+37+126"],
+			["RKSS","+37+126"],
+			["RKSO","+37+127"],
+			["RKSM","+37+127"],
+			["RKSW","+37+127"],
+			["RKNW","+37+127"],
+			["RK15","+38+127"],
+			["RK14","+38+127"],
+			["RK13","+38+127"],
+			["RKNY","+38+128"]);
+
+		var select = new Array(
+			["+34+126",0],
+			["+34+127",0],
+			["+34+128",0],
+			["+35+126",0],
+			["+35+127",0],
+			["+35+128",0],
+			["+35+129",0],
+			["+36+126",0],
+			["+36+127",0],
+			["+36+128",0],
+			["+36+129",0],
+			["+37+126",0],
+			["+37+127",0],
+			["+37+128",0],
+			["+37+129",0],
+			["+37+130",0],
+			["+37+131",0],
+			["+38+127",0],
+			["+38+128",0]);
+		function mklink() {
+			zl = document.getElementById("zl").value;
+				if (zl != "nan") {
+				document.getElementById("result").value = "";
+				for (i = 0; i < 19; i++) {
+					url = document.getElementById("result").value;
+					if (select[i][1] == 1) {
+						document.getElementById("result").value = url + "http://kyuyeop.ipdisk.co.kr:8989/publist/HDD1/xplane/zOrtho4XP_" + select[i][0] + zl + ".zip\n";
+					}
+				}
+			} else {
+				alert("Please select zoomlevel");
+			}
+		}
+		function change(id) {
+			if (document.getElementById(id).src.indexOf("find.png") == -1) {
+				if (document.getElementById(id).src.indexOf("unsel.png") == -1) {
+					document.getElementById(id).src = 'unsel.png';
+					for (i = 0; i < 19; i++) {
+						if (select[i][0] == id) {
+							select[i][1] = 0;
+						}
+					}
+				} else {
+					document.getElementById(id).src = 'sel.png';
+					for (i = 0; i < 19; i++) {
+						if (select[i][0] == id) {
+							select[i][1] = 1;
+						}
+					}
+				}
+			} else {
+				document.getElementById(id).src = 'sel.png';
+					for (i = 0; i < 19; i++) {
+						if (select[i][0] == id) {
+							select[i][1] = 1;
+						}
+					}
+			}
+		}
+		function search() {
+			f = 0;
+			for (i = 1; i < airport.length; i++) {
+				if (document.getElementById('search').value.toUpperCase() == airport[i][0]) {
+					document.getElementById(airport[i][1]).src = 'find.png';
+					f++;
+				}
+			}
+			if (f == 0) {
+				alert("No search results found.");
+			}
+		}
+		function enterkey() {
+        	if (window.event.keyCode == 13) {
+				search();
+			}
+		}
+	</script>
 </head>
-<body bgcolor="2288ff">
-<center>
-<noscript>
-<br>
-<div style="width:75%; height:100px; border-radius:5px; background-color:red;">
-<center>
-<p style="color:white; font-size:25px;"><b>자바스크립트를 사용할 수 없습니다. 자바스크립트 기능을 켜주세요.</b></p>
-<p style="color:white; font-size:25px;"><b>자바스크립트를 활성화 하지 않으면 파일 다운로드가 불가합니다.</b></p>
-</center>
-</noscript>
-<br>
-<br>
-<br>
-<div style="width:75%; max-width:720px; height:75vh; border-radius:15px; background-color:white; position:relative;">
-<center>
-<p style="font-size:25px;">제 사이트에 방문해 주셔서 감사합니다.</p>
-</center>
+<body style="margin: 0; position: relative;">
+<!--http://kyuyeop.ipdisk.co.kr:8989/publist/HDD1/xplane/yOrtho4XP_Overlays.zip
+http://kyuyeop.ipdisk.co.kr:8989/publist/HDD1/xplane/zOrtho4XP_+34+126_zl18.zip
+-->
+<div style="position: relative;" ondragstart="return false">
+<img src="map.png">
+<img src="unsel.png" id="+38+127" style="position: absolute; top: 0; left: 341" onclick="change('+38+127');">
+<img src="unsel.png" id="+38+128" style="position: absolute; top: 0; left: 478" onclick="change('+38+128');">
+<img src="unsel.png" id="+37+126" style="position: absolute; top: 168; left: 204" onclick="change('+37+126');">
+<img src="unsel.png" id="+37+127" style="position: absolute; top: 168; left: 341" onclick="change('+37+127');">
+<img src="unsel.png" id="+37+128" style="position: absolute; top: 168; left: 478" onclick="change('+37+128');">
+<img src="unsel.png" id="+37+129" style="position: absolute; top: 168; left: 615" onclick="change('+37+129');">
+<img src="unsel.png" id="+37+130" style="position: absolute; top: 168; left: 752" onclick="change('+37+130');">
+<img src="unsel.png" id="+37+131" style="position: absolute; top: 168; left: 889" onclick="change('+37+131');">
+<img src="unsel.png" id="+36+126" style="position: absolute; top: 336; left: 204" onclick="change('+36+126');">
+<img src="unsel.png" id="+36+127" style="position: absolute; top: 336; left: 341" onclick="change('+36+127');">
+<img src="unsel.png" id="+36+128" style="position: absolute; top: 336; left: 478" onclick="change('+36+128');">
+<img src="unsel.png" id="+36+129" style="position: absolute; top: 336; left: 615" onclick="change('+36+129');">
+<img src="unsel.png" id="+35+126" style="position: absolute; top: 504; left: 204" onclick="change('+35+126');">
+<img src="unsel.png" id="+35+127" style="position: absolute; top: 504; left: 341" onclick="change('+35+127');">
+<img src="unsel.png" id="+35+128" style="position: absolute; top: 504; left: 478" onclick="change('+35+128');">
+<img src="unsel.png" id="+35+129" style="position: absolute; top: 504; left: 615" onclick="change('+35+129');">
+<img src="unsel.png" id="+34+126" style="position: absolute; top: 672; left: 204" onclick="change('+34+126');">
+<img src="unsel.png" id="+34+127" style="position: absolute; top: 672; left: 341" onclick="change('+34+127');">
+<img src="unsel.png" id="+34+128" style="position: absolute; top: 672; left: 478" onclick="change('+34+128');">
+<div style="position: absolute; top: 10; left: 10; background-color: #fcfcfc; border-radius: 5px;">
+	<div style="margin: 10">
+		Search airport<br/>
+		<input type="text" id="search" placeholder="Search by ICAO" style="width: 110px" onkeyup="enterkey();">
+		<button onclick="search();" style="background-color: #fafafa">go</button>
+	</div>
 </div>
-</center>
+<div style="position: absolute; left: 1026; top: 0; margin: 25">
+	<select id="zl">
+		<option value="nan" disabled selected>-- zoomlevel --</option>
+		<option value="_zl16">zl16</option>
+		<option value="_zl17">zl17</option>
+		<option value="_zl18">zl18</option>
+	</select>
+	<button onclick="mklink()">make</button>
+	<br/>
+	<br/>
+	<textarea id="result" readonly style="resize: none; width: 600px; height: 300px"></textarea>
+<div>
 </body>
 </html>
