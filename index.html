@@ -66,6 +66,7 @@
 			if (document.getElementById(id).src.indexOf("find.png") == -1) {
 				if (document.getElementById(id).src.indexOf("unsel.png") == -1) {
 					document.getElementById(id).src = 'unsel.png';
+					document.getElementById('c'+id).checked = false;
 					for (i = 0; i < 19; i++) {
 						if (select[i][0] == id) {
 							select[i][1] = 0;
@@ -73,6 +74,7 @@
 					}
 				} else {
 					document.getElementById(id).src = 'sel.png';
+					document.getElementById('c'+id).checked = true;
 					for (i = 0; i < 19; i++) {
 						if (select[i][0] == id) {
 							select[i][1] = 1;
@@ -81,6 +83,7 @@
 				}
 			} else {
 				document.getElementById(id).src = 'sel.png';
+				document.getElementById('c'+id).checked = true;
 					for (i = 0; i < 19; i++) {
 						if (select[i][0] == id) {
 							select[i][1] = 1;
@@ -105,6 +108,93 @@
 				search();
 			}
 		}
+		function checkall() {
+			if (document.getElementById('all').checked == true) {
+				for (i = 0; i < 19; i++) {
+					select[i][1] = 1;
+				}
+				document.getElementById('+34+126').src = 'sel.png';
+				document.getElementById('+34+127').src = 'sel.png';
+				document.getElementById('+34+128').src = 'sel.png';
+				document.getElementById('+35+126').src = 'sel.png';
+				document.getElementById('+35+127').src = 'sel.png';
+				document.getElementById('+35+128').src = 'sel.png';
+				document.getElementById('+35+129').src = 'sel.png';
+				document.getElementById('+36+126').src = 'sel.png';
+				document.getElementById('+36+127').src = 'sel.png';
+				document.getElementById('+36+128').src = 'sel.png';
+				document.getElementById('+36+129').src = 'sel.png';
+				document.getElementById('+37+126').src = 'sel.png';
+				document.getElementById('+37+127').src = 'sel.png';
+				document.getElementById('+37+128').src = 'sel.png';
+				document.getElementById('+37+129').src = 'sel.png';
+				document.getElementById('+37+130').src = 'sel.png';
+				document.getElementById('+37+131').src = 'sel.png';
+				document.getElementById('+38+127').src = 'sel.png';
+				document.getElementById('+38+128').src = 'sel.png';
+				document.getElementById('c+34+126').checked = true;
+				document.getElementById('c+34+127').checked = true;
+				document.getElementById('c+34+128').checked = true;
+				document.getElementById('c+35+126').checked = true;
+				document.getElementById('c+35+127').checked = true;
+				document.getElementById('c+35+128').checked = true;
+				document.getElementById('c+35+129').checked = true;
+				document.getElementById('c+36+126').checked = true;
+				document.getElementById('c+36+127').checked = true;
+				document.getElementById('c+36+128').checked = true;
+				document.getElementById('c+36+129').checked = true;
+				document.getElementById('c+37+126').checked = true;
+				document.getElementById('c+37+127').checked = true;
+				document.getElementById('c+37+128').checked = true;
+				document.getElementById('c+37+129').checked = true;
+				document.getElementById('c+37+130').checked = true;
+				document.getElementById('c+37+131').checked = true;
+				document.getElementById('c+38+127').checked = true;
+				document.getElementById('c+38+128').checked = true;
+			} else {
+				for (i = 0; i < 19; i++) {
+					select[i][1] = 0;
+				}
+				document.getElementById('+34+126').src = 'unsel.png';
+				document.getElementById('+34+127').src = 'unsel.png';
+				document.getElementById('+34+128').src = 'unsel.png';
+				document.getElementById('+35+126').src = 'unsel.png';
+				document.getElementById('+35+127').src = 'unsel.png';
+				document.getElementById('+35+128').src = 'unsel.png';
+				document.getElementById('+35+129').src = 'unsel.png';
+				document.getElementById('+36+126').src = 'unsel.png';
+				document.getElementById('+36+127').src = 'unsel.png';
+				document.getElementById('+36+128').src = 'unsel.png';
+				document.getElementById('+36+129').src = 'unsel.png';
+				document.getElementById('+37+126').src = 'unsel.png';
+				document.getElementById('+37+127').src = 'unsel.png';
+				document.getElementById('+37+128').src = 'unsel.png';
+				document.getElementById('+37+129').src = 'unsel.png';
+				document.getElementById('+37+130').src = 'unsel.png';
+				document.getElementById('+37+131').src = 'unsel.png';
+				document.getElementById('+38+127').src = 'unsel.png';
+				document.getElementById('+38+128').src = 'unsel.png';
+				document.getElementById('c+34+126').checked = false;
+				document.getElementById('c+34+127').checked = false;
+				document.getElementById('c+34+128').checked = false;
+				document.getElementById('c+35+126').checked = false;
+				document.getElementById('c+35+127').checked = false;
+				document.getElementById('c+35+128').checked = false;
+				document.getElementById('c+35+129').checked = false;
+				document.getElementById('c+36+126').checked = false;
+				document.getElementById('c+36+127').checked = false;
+				document.getElementById('c+36+128').checked = false;
+				document.getElementById('c+36+129').checked = false;
+				document.getElementById('c+37+126').checked = false;
+				document.getElementById('c+37+127').checked = false;
+				document.getElementById('c+37+128').checked = false;
+				document.getElementById('c+37+129').checked = false;
+				document.getElementById('c+37+130').checked = false;
+				document.getElementById('c+37+131').checked = false;
+				document.getElementById('c+38+127').checked = false;
+				document.getElementById('c+38+128').checked = false;
+				}
+			}
 	</script>
 </head>
 <body style="margin: 0; position: relative;">
@@ -147,6 +237,28 @@
 	<br/>
 	<br/>
 	<textarea id="result" readonly style="resize: none; width: 600px; height: 300px"></textarea>
+	<br/>
+	<br/>
+	<label><input type="checkbox" id="all" onchange="checkall();"></label><br/>
+	<label><input type="checkbox" id="c+34+126" onchange="change('+34+126');">+34+126</label><br/>
+	<label><input type="checkbox" id="c+34+127" onchange="change('+34+127');">+34+127</label><br/>
+	<label><input type="checkbox" id="c+34+128" onchange="change('+34+128');">+34+128</label><br/>
+	<label><input type="checkbox" id="c+35+126" onchange="change('+35+126');">+35+126</label><br/>
+	<label><input type="checkbox" id="c+35+127" onchange="change('+35+127');">+35+127</label><br/>
+	<label><input type="checkbox" id="c+35+128" onchange="change('+35+128');">+35+128</label><br/>
+	<label><input type="checkbox" id="c+35+129" onchange="change('+35+129');">+35+129</label><br/>
+	<label><input type="checkbox" id="c+36+126" onchange="change('+36+126');">+36+126</label><br/>
+	<label><input type="checkbox" id="c+36+127" onchange="change('+36+127');">+36+127</label><br/>
+	<label><input type="checkbox" id="c+36+128" onchange="change('+36+128');">+36+128</label><br/>
+	<label><input type="checkbox" id="c+36+129" onchange="change('+36+129');">+36+129</label><br/>
+	<label><input type="checkbox" id="c+37+126" onchange="change('+37+126');">+37+126</label><br/>
+	<label><input type="checkbox" id="c+37+127" onchange="change('+37+127');">+37+127</label><br/>
+	<label><input type="checkbox" id="c+37+128" onchange="change('+37+128');">+37+128</label><br/>
+	<label><input type="checkbox" id="c+37+129" onchange="change('+37+129');">+37+129</label><br/>
+	<label><input type="checkbox" id="c+37+130" onchange="change('+37+130');">+37+130</label><br/>
+	<label><input type="checkbox" id="c+37+131" onchange="change('+37+131');">+37+131</label><br/>
+	<label><input type="checkbox" id="c+38+127" onchange="change('+38+127');">+38+127</label><br/>
+	<label><input type="checkbox" id="c+38+128" onchange="change('+38+128');">+38+128</label><br/>
 <div>
 </body>
 </html>
