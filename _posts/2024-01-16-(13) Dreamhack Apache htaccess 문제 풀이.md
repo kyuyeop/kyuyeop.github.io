@@ -22,7 +22,7 @@ AddType application/x-httpd-php .txt
 다음과 같이 입력하면, 이 .htaccess파일이 존재하는 디렉토리 및 그 하위 디렉토리에서는 .txt파일이 php와 같이 동작하게 됩니다.
 
 ## 문제 풀이
-![](http://localhost:4000/assets/img/post/13/1.png)
+![](https://kyuyeop.github.io/assets/img/post/13/1.png)
 사이트에는 이런 형태의 파일 업로드 기능이 구현되어 있습니다.
 ```php
 <?php
@@ -86,7 +86,7 @@ shell.txt
 
 flag는 /flag에 있습니다.
 `/flag`를 입력하고 실행해주면
-![](http://localhost:4000/assets/img/post/13/2.png)
+![](https://lkyuyeop.github.io/assets/img/post/13/2.png)
 flag를 얻었습니다.  
   
 확장자를 예측할 수 없는 파일 업로드에는 이런 설정파일도 필터링해야 합니다.  

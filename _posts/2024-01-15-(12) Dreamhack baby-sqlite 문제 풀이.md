@@ -14,7 +14,7 @@ SQL INJECTION 취약점을 통해 플래그를 획득하세요. 문제에서 주
 
 ## 문제 풀이
 먼저 사이트에서 로그인 페이지에 들어온 모습입니다.
-![](http://localhost:4000/assets/img/post/12/1.png)
+![](https://kyuyeop.github.io/assets/img/post/12/1.png)
 이번 문제는 app.py 하나만 제공합니다.
 ```python
 #!/usr/bin/env python3
@@ -147,21 +147,21 @@ SELECT uid FROM users WHERE uid='{uid}' and upw='{upw}' and level={level};
 이럴때 방법은 두가지 입니다.
   
 첫번째 방법은 어차피 프론트 엔드니까, 그냥 form에 input을 추가해버리는 겁니다.
-![](http://localhost:4000/assets/img/post/12/2.png)
-![](http://localhost:4000/assets/img/post/12/3.png)
+![](https://kyuyeop.github.io/assets/img/post/12/2.png)
+![](https://kyuyeop.github.io/assets/img/post/12/3.png)
 이렇게 level 입력란을 만들어 버릴 수 있습니다.
   
 두번째 방법은 burp suite 같은 프록시 프로그램을 이용해서, post 요청을 보낼때 요청에 level값을 끼워넣는 겁니다.
 
 먼저 브라우저를 열고 문제 주소로 접속한 뒤 Intercept is on 으로 바꿔 줍니다.
-![](http://localhost:4000/assets/img/post/12/4.png)
+![](https://kyuyeop.github.io/assets/img/post/12/4.png)
 그리고 브라우저에서 없는 값을 아무거나 입력하고 제출을 누르면
-![](http://localhost:4000/assets/img/post/12/5.png)
+![](https://kyuyeop.github.io/assets/img/post/12/5.png)
 burp suite 창에 아래처럼 보내려는 요청이 뜹니다.
-![](http://localhost:4000/assets/img/post/12/6.png)
+![](https://kyuyeop.github.io/assets/img/post/12/6.png)
 16번째 줄을 보면 아까 우리가 입력한 uid, upw값이 들어있죠. 여기에 level을 끼워서 보내면 됩니다.
-![](http://localhost:4000/assets/img/post/12/7.png)
+![](https://kyuyeop.github.io/assets/img/post/12/7.png)
 이렇게 입력하고 Intercept is on 버튼을 다시 눌러서 전송하게 되면?
-![](http://localhost:4000/assets/img/post/12/8.png)
+![](https://kyuyeop.github.io/assets/img/post/12/8.png)
 flag를 얻을 수 있습니다.
 {% endraw %}
