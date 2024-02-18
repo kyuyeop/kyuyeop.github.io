@@ -8,7 +8,7 @@ tags:
 ---
 {% raw %}
 ## 문제 풀이
-![](http://kyuyeop.github.io/assets/img/post/10/1.png)
+![](https://kyuyeop.github.io/assets/img/post/10/1.png)
 XSS 문제에서 본 그 템플릿인데 로그인과 비밀번호 변경 기능이 생겼습니다.  
 코드 입니다.
 ```python
@@ -162,7 +162,7 @@ img 태그로 원하는 url에 방문할 수 있도록 만들어 주었습니다
 pw 즉, 변경할 비밀번호는 1로 하고 csrftoken에는 앞서 구한 값을 넣어주었습니다.  
   
 그리고 admin/1 로 로그인해주면...
-![](http://kyuyeop.github.io/assets/img/post/10/2.png)
+![](https://kyuyeop.github.io/assets/img/post/10/2.png)
 flag를 획득할 수 있습니다.  
   
 역시 어렵지 않습니다.

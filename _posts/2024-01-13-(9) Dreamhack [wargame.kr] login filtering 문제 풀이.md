@@ -13,7 +13,7 @@ can you login bypass filtering?
 
 ## 문제 풀이
 일단 들어오면
-![](http://kyuyeop.github.io/assets/img/post/9/1.png)
+![](https://kyuyeop.github.io/assets/img/post/9/1.png)
 이런 사이트가 나옵니다. get source를 누르면 아래 코드가 나옵니다.
 ```php
 <?php
@@ -87,7 +87,7 @@ blueh4g / blueh4g1234ps
 이 문제는 mysql을 쓰고 있는데, mysql은 대소문자를 가리지 않습니다.  
 가장 아래 있는 주석을 보면 아이디와 비밀번호로 추정되는게 있습니다.
 따라서 그냥 GUEST / guest로 로그인하면 id가 소문자 guest가 아니니 로그인이 됩니다.
-![](http://kyuyeop.github.io/assets/img/post/9/2.png)
+![](https://kyuyeop.github.io/assets/img/post/9/2.png)
 flag가 출력됩니다.  
   
 쉽습니다.

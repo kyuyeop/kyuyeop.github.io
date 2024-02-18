@@ -25,7 +25,7 @@ extractvalue(1,concat(0x3a,('select * from user ...')))
 이걸 어떤 쿼리문 뒤에 붙여서 넘기면 에러가 뜨고 에러메세지에는 쿼리의 결과가 나올겁니다.
 
 ## 문제 풀이
-![](http://kyuyeop.github.io/assets/img/post/6/1.png)
+![](https://kyuyeop.github.io/assets/img/post/6/1.png)
 일단 사이트는 이렇게 생겼습니다. 아마 위에 있는 쿼리문이 실행되는것 같습니다.  
   
 그럼 제공된 코드를 한번 살펴보겠습니다.
@@ -120,13 +120,13 @@ SELECT * FROM user WHERE uid='' AND extractvalue(1,concat(0x3a,(select upw from 
 이런게 실행되어 버릴 겁니다. 에러가 나므로 당연히 try에서 expect로 빠질거고, 에러메세지가 그대로 출력될 겁니다.  
   
 실제로도 그런지 테스트를 해보면
-![](http://kyuyeop.github.io/assets/img/post/6/2.png)
+![](https://kyuyeop.github.io/assets/img/post/6/2.png)
 flag가 출력되긴 했는데... 잘려서 나옵니다. 에러메세지가 너무 길어서 잘려서 출력되었습니다.  
   
 이를 해결하기 위해서 substr을 사용할 겁니다. 일단 앞의 28자는 출력이 되었으므로 대충 25번째 부터 추가로 20글자 정도를 출력하도록 쿼리문을 수정해 보겠습니다.
 ```
 ' AND extractvalue(1,concat(0x3a,(select substr(upw,25,20) from user where uid='admin')))-- 
 ```
-![](http://kyuyeop.github.io/assets/img/post/6/3.png)
+![](https://kyuyeop.github.io/assets/img/post/6/3.png)
 이렇게 나머지 부분도 출력이 되어 flag를 획득했습니다.
 {% endraw %}

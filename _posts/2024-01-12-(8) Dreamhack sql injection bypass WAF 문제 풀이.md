@@ -9,7 +9,7 @@ tags:
 {% raw %}
 ## 문제 풀이
 사이트에 들어가면 이렇게 생겼습니다.
-![](http://kyuyeop.github.io/assets/img/post/8/1.png)
+![](https://kyuyeop.github.io/assets/img/post/8/1.png)
 먼저 init.sql입니다.
 ```sql
 # init.sql
@@ -41,9 +41,9 @@ FLUSH PRIVILEGES;
 |4|dream|hack|
 {% raw %}
 일단 admin을 넣어봅시다.
-![](http://kyuyeop.github.io/assets/img/post/8/2.png)
+![](https://kyuyeop.github.io/assets/img/post/8/2.png)
 막혔다고 뜹니다. 다른 값은 어떤지 보겠습니다. guest를 넣으면
-![](http://kyuyeop.github.io/assets/img/post/8/3.png)
+![](https://kyuyeop.github.io/assets/img/post/8/3.png)
 guest가 출력됩니다.  
   
 어떤 로직으로 돌아가는지 확인해 보겠습니다.
@@ -110,6 +110,6 @@ admin을 막고 있으니 limit 1,1을 이용해 admin을 선택해 주었습니
 여기서 조심할 부분이 또 있는데, 바로 null,upw,null 부분입니다.  
 union을 사용할때 앞 sql문의 반환값과 뒤 sql문의 column 수가 같아야 에러가 안납니다.  
 저 코드를 uid에 넣고 실행하면
-![](http://kyuyeop.github.io/assets/img/post/8/4.png)
+![](https://kyuyeop.github.io/assets/img/post/8/4.png)
 flag가 출력됩니다.
 {% endraw %}

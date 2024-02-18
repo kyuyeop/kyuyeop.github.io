@@ -22,7 +22,7 @@ index.html을 이렇게 구성하고
 </html>
 ```
 Flask로 서버를 띄워보면
-![](http://kyuyeop.github.io/assets/img/post/2/1.png)
+![](https://kyuyeop.github.io/assets/img/post/2/1.png)
 이렇게 3이라는 값이 출력되는 걸 볼 수 있습니다. 참고로 근본은 `{{7*7}}`입니다만 식상해서...  
 만약 사용자의 입력값을 별도의 처리 없이 그대로 사이트에 반영시킨다면 사용자가 특정 구문을 입력함으로서 서버에 원격명령을 실행하도록 할 수 있겠죠.  
 
@@ -63,7 +63,7 @@ app.run(host='0.0.0.0', port=8000)
 ```
 코드에서는 존재하지 않는 페이지로 접속했을때 즉, 404 에러 페이지가 뜰때 경로에 따라 어떤 페이지가 존재하지 않는지 알려주는 기능이 구현되어 있습니다.  
 request.path를 그대로 넣어버리기 때문에 ssti 취약점이 발생합니다. 앞에서 처럼 {{1+2}}가 작동하는지 확인하기 위해 /{{1+2}} 를 입력해 보면
-![](http://kyuyeop.github.io/assets/img/post/2/2.png)
+![](https://kyuyeop.github.io/assets/img/post/2/2.png)
 이렇게 1+2가 계산되어 3이 출력되는 걸 볼 수 있습니다. 
 
 그러면 flag를 얻으려면 뭘 입력해야할까요?  
@@ -75,9 +75,9 @@ app.secret_key = FLAG
 flask는 대부분의 정보가 config로 들어가게 됩니다. 따라서 {{config}}를 삽입하게 된다면 secret_key를 포함한 각종 정보들이 나옵니다. 
 
 실제로 입력해보면
-![](http://kyuyeop.github.io/assets/img/post/2/3.png)
+![](https://kyuyeop.github.io/assets/img/post/2/3.png)
 이렇게 SECRET_KEY가 출력됩니다. 만약 SECRET_KEY만 얻고 싶다면 {{config.SECRET_KEY}}를 입력하면 됩니다.
-![](http://kyuyeop.github.io/assets/img/post/2/4.png)
+![](https://kyuyeop.github.io/assets/img/post/2/4.png)
 오늘은 이렇게 ssti 취약점과 dreamhack의 simple-ssti 문제를 풀어보았습니다.  
 템플릿 엔진은 서버마다 사용하는게 다를 수 있으니 염두에 두셔야 합니다.  
 
@@ -89,7 +89,7 @@ flask는 대부분의 정보가 config로 들어가게 됩니다. 따라서 {{co
 먼저 '' 즉, str의 class를 가져오고 \_\_mro__를 이용해 상속 받는 클래스를 가져옵니다. 여기서는 2번째 클래스인 object를 받아옵니다.  
 그리고 object의 subclasses를 가져와서 확인해보면 409번째가 subprocess.Popen 입니다. 이건 사용하는 파이썬 버전 마다 다를 수 있으니 슬라이싱을 통해 직접 찾아보셔야 합니다.  
 이후에는 파이썬의 subProcess.Popen 처럼 쓰면 됩니다. 실제로 입력하면
-![](http://kyuyeop.github.io/assets/img/post/2/5.png)
+![](https://kyuyeop.github.io/assets/img/post/2/5.png)
 이렇게 flag가 나옵니다.  
 
 이번에는 간단하게 flag만 출력해 보았지만 얼마든지 전체 권한을 가져올 수 있을 겁니다. 원한다면 리버스 쉘도 얻을 수 있습니다.  

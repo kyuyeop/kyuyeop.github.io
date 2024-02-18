@@ -13,9 +13,9 @@ Raw Socket Sender가 구현된 서비스입니다.
 
 ## 문제 풀이
 일단 사이트에 접속해 봅니다.
-![](http://kyuyeop.github.io/assets/img/post/1/1.png)
+![](https://kyuyeop.github.io/assets/img/post/1/1.png)
 이런 사이트가 나타납니다. Raw Socket Sender에서 플래그를 획득해야 하니 들어가 봅니다.
-![](http://kyuyeop.github.io/assets/img/post/1/2.png)
+![](https://kyuyeop.github.io/assets/img/post/1/2.png)
 사이트만 봐도 host port data의 입력값을 그대로 보내줄것 같이 생겼습니다. 이제 코드를 확인해 봅시다.
 ```python
 #!/usr/bin/python3
@@ -150,9 +150,9 @@ Content-Length: 12
 
 userid=admin
 ```
-![](http://kyuyeop.github.io/assets/img/post/1/3.png)
+![](https://kyuyeop.github.io/assets/img/post/1/3.png)
 이렇게 설정하고 send를 누르면
-![](http://kyuyeop.github.io/assets/img/post/1/4.png)
+![](https://kyuyeop.github.io/assets/img/post/1/4.png)
 DH로 시작하는 flag를 얻을 수 있습니다. 
    
 LEVEL 1에 해당하는 문제라 http requset의 데이터 구조만 알고 있다면 어렵지 않게 풀 수 있었습니다.  

@@ -50,9 +50,9 @@ if __name__ == '__main__':
     APP.run(host='0.0.0.0', port=8000)
 ```
 22번째 줄에서 그냥 /bin/sh로 ping 커맨드의 결과를 받아오는게 보일 겁니다. 다른 필터링도 안보이고요.
-![](http://kyuyeop.github.io/assets/img/post/7/1.png)
+![](https://kyuyeop.github.io/assets/img/post/7/1.png)
 이렇게 정상적인 아이피를 쳐주면
-![](http://kyuyeop.github.io/assets/img/post/7/2.png)
+![](https://kyuyeop.github.io/assets/img/post/7/2.png)
 그냥 커맨드 실행 결과를 그대로 뱉어주네요.  
 다른 명령어를 실행하고 싶으면 ;나 &&하고 그냥 다음 명령어를 입력하기만 하면 됩니다.  
   
@@ -60,6 +60,6 @@ if __name__ == '__main__':
 ```
 8.8.8.8; cat flag.py
 ```
-![](http://kyuyeop.github.io/assets/img/post/7/3.png)
+![](https://kyuyeop.github.io/assets/img/post/7/3.png)
 flag를 얻었습니다.
 {% endraw %}

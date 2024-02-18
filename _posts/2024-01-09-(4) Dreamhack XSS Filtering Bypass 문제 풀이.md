@@ -9,12 +9,12 @@ tags:
 {% raw %}
 ## 문제 풀이
 먼저 들어오면 이런 모습입니다.
-![](http://kyuyeop.github.io/assets/img/post/4/1.png)
-![](http://kyuyeop.github.io/assets/img/post/4/2.png)
+![](https://kyuyeop.github.io/assets/img/post/4/1.png)
+![](https://kyuyeop.github.io/assets/img/post/4/2.png)
 vuln 페이지에는 뭐가 없네요. 개발자 도구로 코드를 뜯어보니 param을 그대로 반영한 듯 싶습니다. xss 취약점이 있을 수 있겠네요.
-![](http://kyuyeop.github.io/assets/img/post/4/3.png)
+![](https://kyuyeop.github.io/assets/img/post/4/3.png)
 memo는 들어갈 때 마다 hello를 띄워주네요.
-![](http://kyuyeop.github.io/assets/img/post/4/4.png)
+![](https://kyuyeop.github.io/assets/img/post/4/4.png)
 flag는 이렇게 되어 있습니다. POST 요청을 날려주네요.
   
 그럼 이제 코드를 확인해 봅시다.
@@ -205,12 +205,12 @@ vuln 페이지에는 xss_filter 함수로 필터링을 한다고 했었죠? 그�
 이런식으로 글자 사이에 한번더 치환 문자열을 넣어서 치환을 거쳐 원하는 문자열을 완성시키도록 해야 합니다.  
 
 이렇게 완성된 페이로드를 xss 페이지 input에 넣고
-![](http://kyuyeop.github.io/assets/img/post/4/5.png)
+![](https://kyuyeop.github.io/assets/img/post/4/5.png)
 제출하게 된다면...
-![](http://kyuyeop.github.io/assets/img/post/4/6.png)
+![](https://kyuyeop.github.io/assets/img/post/4/6.png)
 good이 떴습니다!
 공격에 성공했다는 뜻이죠. 이제 memo 페이지를 확인해 보면...
-![](http://kyuyeop.github.io/assets/img/post/4/7.png)
+![](https://kyuyeop.github.io/assets/img/post/4/7.png)
 이렇게 flag가 출력되었습니다.  
   
 이번엔 \<script\>를 이용했지만 대표적인 xss 페이로드는 스크립트 태그를 사용하는 방법 이외에, img, iframe 을 이용하는 방법도 있습니다.

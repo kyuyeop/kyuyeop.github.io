@@ -14,7 +14,7 @@ chatGPT와 함께 풀어보세요!
 
 ## 문제 풀이
 사이트에 접속하면 아래와 같은 로그인 페이지가 구현되어 있습니다.
-![](http://kyuyeop.github.io/assets/img/post/5/1.png)
+![](https://kyuyeop.github.io/assets/img/post/5/1.png)
 코드는 다음과 같습니다.
 ```python
 #!/usr/bin/python3
@@ -97,14 +97,14 @@ select * from users where userlevel='{userlevel}'
 select * from users where userlevel='0' and userid='admin'
 ```
 userlevel 부분에 0' and userid='admin가 들어가는 거죠. 실제로 이 페이로드를 입력해서 보내면
-![](http://kyuyeop.github.io/assets/img/post/5/2.png)
-![](http://kyuyeop.github.io/assets/img/post/5/3.png)
+![](https://kyuyeop.github.io/assets/img/post/5/2.png)
+![](https://kyuyeop.github.io/assets/img/post/5/3.png)
 이렇게 flag가 출력됩니다.  
   
 sqli는 정답이 저거 하나만은 아닙니다.
-![](http://kyuyeop.github.io/assets/img/post/5/4.png)
+![](https://kyuyeop.github.io/assets/img/post/5/4.png)
 admin이기만 하면 되므로 or을 쓰거나
-![](http://kyuyeop.github.io/assets/img/post/5/5.png)
+![](https://kyuyeop.github.io/assets/img/post/5/5.png)
 '을 적고 주석을 쓰는 방법도 있습니다.  
 
 이거 말고도 다양한 풀이가 있을겁니다. union을 이용한 방법이라든지... 그런건 추가로 공부해보세요.
