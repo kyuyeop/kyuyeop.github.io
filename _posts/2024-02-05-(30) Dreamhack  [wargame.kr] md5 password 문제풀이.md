@@ -1,5 +1,5 @@
 ---
-title: (30) [wargame.kr] md5 password 문제풀이
+title: (30) Dreamhack  [wargame.kr] md5 password 문제풀이
 date: 2024-02-05 +09:00
 categories:
   - 웹해킹

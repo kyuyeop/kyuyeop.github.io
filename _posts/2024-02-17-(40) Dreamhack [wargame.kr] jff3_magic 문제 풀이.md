@@ -1,5 +1,5 @@
 ---
-title: (40) [wargame.kr] jff3_magic 문제 풀이
+title: (40) Dreamhack [wargame.kr] jff3_magic 문제 풀이
 date: 2024-02-17 +09:00
 categories:
   - 웹해킹

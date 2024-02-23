@@ -1,5 +1,5 @@
 ---
-title: (35) Relative Path Overwrite 문제 풀이
+title: (35) Dreamhack Relative Path Overwrite 문제 풀이
 date: 2024-02-12 +09:00
 categories:
   - 웹해킹
