@@ -14,10 +14,10 @@ tags:
 flag는 `/flag.txt`에 있습니다.
 
 ## 문제 풀이
-![](http://localhost:4000/assets/img/post/41/1.png)
+![](https://kyuyeop.github.io/assets/img/post/41/1.png)
 처음 사이트에 들어가면 선글라스들이 있습니다.  
 
-![](http://localhost:4000/assets/img/post/41/2.png)
+![](https://kyuyeop.github.io/assets/img/post/41/2.png)
 외부로 요청하는 기능에 취약점이 있다고 했으니 이 페이지가 우리가 flag를 얻는데 필요한 페이지인듯 합니다.  
   
 코드를 살펴봅시다.
@@ -85,8 +85,6 @@ if __name__ == "__main__":
             mini_database.append({k: base64.b64encode(data).decode('utf-8')})
     
     app.run(host="0.0.0.0", port=80, debug=False)
-
-
 ```
 취약점을 찾아야 할 곳은 `/request`이니 해당 부분만 중점적으로 보겠습니다.  
 이 페이지는 다음과 같이 작동합니다.  
@@ -116,13 +114,13 @@ file:/fla%67.txt
 ```
 이번에는 가장 아래의 페이로드를 이용해 보겠습니다.  
 
-![](http://localhost:4000/assets/img/post/41/3.png)
+![](https://kyuyeop.github.io/assets/img/post/41/3.png)
 위와 같이 적고 요청을 누르면 정상적으로 처리가 되고 `/view`로 이동됩니다.  
 
-![](http://localhost:4000/assets/img/post/41/4.png)
+![](https://kyuyeop.github.io/assets/img/post/41/4.png)
 가장 아래쪽을 보면 방금 만들었던 `flag`라는 이름이 보입니다.  
 
-![](http://localhost:4000/assets/img/post/41/5.png)
+![](https://kyuyeop.github.io/assets/img/post/41/5.png)
 개발자 도구를 열고 이미지 부분의 코드를 확인하면 위와 같이 base64 인코딩된 값을 얻을 수 있습니다.  
 이렇게 얻은 `REh7YjIwMzdhMDI2YjQwY2M5ODgwNGU5MWI1YTJhMDdmNTR9`을 base64 디코딩 툴을 이용해 변환하면 `DH{b2037a026b40cc98804e91b5a2a07f54}`라는 flag를 얻을 수 있습니다.
 {% endraw %}
