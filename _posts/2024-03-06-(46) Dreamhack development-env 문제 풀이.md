@@ -142,7 +142,7 @@ Signature파트에서 암호화에 사용된 secret key를 알아낼 수 있다�
 
 위와 같이 소스코드의 일부가 반환되는것을 볼 수 있고 찾아보면 `kitvP5j71fwycLz`라는 key가 노출되고 있습니다.  
   
-이제 구한 키를 가지고 ![여기](https://jwt.io/)에서 JWT를 생성해봅시다.
+이제 구한 키를 가지고 [여기](https://jwt.io/)에서 JWT를 생성해봅시다.
 ![](https://kyuyeop.github.io/assets/img/post/46/5.png)
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidWlkIjoiYWRtaW4ifQ.wQt9Fxeq7YtS5exzZ8x2hytp2zbE79YR5elSu5E1DiA
