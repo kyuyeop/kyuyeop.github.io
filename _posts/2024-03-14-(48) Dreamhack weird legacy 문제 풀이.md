@@ -61,8 +61,8 @@ app.listen(PORT, () => {
 그런데 여기서도 딱히 문제가 있는걸 확인하긴 어렵습니다. 그래서 구글링을 좀 해봤는데 토스에서 [Node.js url.parse() 취약점 컨트리뷰션](https://toss.tech/article/nodejs-security-contribution)라는 글을 발견했습니다.  
 내용을 간단히 요약하면 hostname을 구할 때 host에서 사용할 수 없는 문자 이전까지만 잘라서 반환하도록 구현되어 있는데 `WHATWG URL API`와 `url.parse()`간의 결과 차이를 이용해 hostname spoofing이 가능하다고 합니다.  
 
-혹시 이건가? 싶어서 적용해 보았습니다. 방법도 간단히 `!`나 `*`을 이용해서 localhost를 이어 써주기만 하면 됩니다.  
-문제에서 `host`를 검사할 때 `&&`을 쓰고 있어서 둘 중 하나라도 참을 만들면 우회가 가능합니다. 이번에도 드림핵 툴즈를 사용했습니다.
+혹시 이건가? 싶어서 적용해 보았습니다. 방법도 간단히 `!`나 `*`을 이용해서 `localhost`를 이어 써주기만 하면 됩니다.  
+문제에서 `host`를 검사할 때 `&&`을 쓰고 있어서 뭐라도 `false`로 만들어주면 우회가 가능합니다. 이번에도 드림핵 툴즈를 사용했습니다.
 `/fetch?url=https://nqxuntb.request.dreamhack.games!localhost`(`*`를 사용해도 됨)로 접속을 해보니
 ![](https://kyuyeop.github.io/assets/img/post/48/2.png)
 
