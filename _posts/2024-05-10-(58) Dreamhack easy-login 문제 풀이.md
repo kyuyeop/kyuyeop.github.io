@@ -164,10 +164,10 @@ if (!strcmp($cred['pw'], $GLOBALS['admin_pw'])) {
 burp suite를 켜고 아무값을 입력해서 전송을 한 다음 forward를 해보면
 ![](https://kyuyeop.github.io/assets/img/post/58/2.png)
 
-이렇게 cred이라는 값이 전달되고 있습니다. 그리고 오른쪽에 디코딩 된 값을 보면 입력한 값이 json형태로 보여집니다. 이 값을 수정해보도록 합시다.  
+이렇게 cred이라는 값이 전달되고 있습니다. 이걸 디코딩 해보면 입력값에 대한 json이 나옵니다.
 ![](https://kyuyeop.github.io/assets/img/post/58/3.png)
 
-앞서 설명한대로, otp 에는 true를, pw에는 빈 배열을 넣고 요청을 날려보면
+오른쪽에 보이는 것과 같이, otp 에는 true를, pw에는 빈 배열을 넣고 요청을 날려보면
 ![](https://kyuyeop.github.io/assets/img/post/58/4.png)
 
 이렇게 flag가 출력됩니다.
